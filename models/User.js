@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
+const validator = require('validator');
 const Schema = mongoose.Schema
+
 
 
 const userSchema = new Schema({
@@ -21,8 +23,8 @@ const userSchema = new Schema({
     },
     accounttype:{
         type: String,
-//         require: true
-//         default:"publice"
+        required: true
+
     },
     email:{
         type:String,
@@ -40,8 +42,10 @@ const userSchema = new Schema({
     lastLogin: Date,
     accountype:String
 },
+},
 
-{
-    timestamps: true
-})
+{timestamps: true}
+
+
+)
 module.exports = mongoose.model('User', userSchema)
