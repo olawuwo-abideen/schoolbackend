@@ -3,8 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('express-async-errors');
 const app = express();
-
-
+const cors = require('cors')
 
 
 
@@ -16,7 +15,9 @@ const connectDB = require('./database/connect');
 
 
 
-
+app.use('/api/v1', courses)
+app.use('/api/v1', router)
+app.use('/api/v1', public)
 
 
 
